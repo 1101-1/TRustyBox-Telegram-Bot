@@ -59,7 +59,6 @@ pub async fn send_file(
             InputFile::file_name(InputFile::file(&path_to_file), file_name.clone()),
         )
         .await?;
-        // dialogue.update(State::HandleCommand).await?;
         dialogue.exit().await?;
         return Ok(());
     }
@@ -71,7 +70,6 @@ pub async fn send_file(
         )
         .await?;
         dialogue.exit().await?;
-        // dialogue.update(State::HandleCommand).await?;
         return Ok(());
     }
 

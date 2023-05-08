@@ -44,7 +44,7 @@ pub async fn command_handler(
             .await?
         }
         Command::Cancel => {
-            dialogue.update(State::HandleCommand).await?;
+            dialogue.exit().await?;
             bot.send_message(msg.chat.id, "Cancel command").await?
         }
     };

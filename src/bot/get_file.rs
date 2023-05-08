@@ -110,8 +110,7 @@ pub async fn file_handler(
             )
             .await
             .unwrap();
-
-            dialogue.update(State::HandleCommand).await?;
+            dialogue.exit().await?;
         } else {
             let file_id = &file.file.id;
             let telegram_file = bot.get_file(file_id.clone()).await?;
@@ -172,8 +171,7 @@ pub async fn file_handler(
             )
             .await
             .unwrap();
-
-            dialogue.update(State::HandleCommand).await?;
+            dialogue.exit().await?;
         }
     }
     if let Some(_pic) = msg.photo() {
