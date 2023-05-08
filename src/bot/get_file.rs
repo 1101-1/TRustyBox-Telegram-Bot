@@ -91,8 +91,8 @@ pub async fn file_handler(
             bot.send_message(
                 msg.chat.id,
                 format!(
-                    "Short path: {} \n
-                    Encryption key: {} \n
+                    "Short path: {}\n
+                    Encryption key: {}\n
                     You can download file from bot by /getfile command",
                     &generated_short_path, &encoded_key
                 ),
