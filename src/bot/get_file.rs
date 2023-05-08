@@ -14,7 +14,7 @@ use crate::{
     tools::{generate_uuid::generate_uuid_v4, short_url::generate_short_path_url},
     types::{
         ecryption_state::FileEncryptionType,
-        state::{HandlerResult, MyDialogue, State},
+        state::{HandlerResult, MyDialogue},
     },
 };
 
