@@ -4,8 +4,8 @@ use teloxide_core::{
     Bot,
 };
 use tokio::{
-    fs::{File, OpenOptions},
-    io::{AsyncReadExt, AsyncWriteExt},
+    fs::{File},
+    io::{AsyncReadExt},
 };
 
 use crate::{
@@ -44,19 +44,11 @@ pub async fn send_file(
         let mut file_data = Vec::new();
         file.read_to_end(&mut file_data).await?;
 
-        let mut data = decrypt_data(&file_data, key_bytes).await.unwrap();
-
-        let mut dst = OpenOptions::new()
-            .write(true)
-            .truncate(true)
-            .open(&path_to_file)
-            .await?;
-
-        dst.write_all(&mut data).await?;
+        let data = decrypt_data(file_data, key_bytes).await.unwrap();
 
         bot.send_document(
             msg.chat.id,
-            InputFile::file_name(InputFile::file(&path_to_file), file_name.clone()),
+            InputFile::file_name(InputFile::memory(data), file_name.clone()),
         )
         .await?;
         dialogue.exit().await?;
