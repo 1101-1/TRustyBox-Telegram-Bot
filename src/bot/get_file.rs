@@ -1,6 +1,6 @@
 use std::env;
 
-use teloxide_core::{net::Download, requests::Requester, types::Message, Bot};
+use teloxide::{net::Download, requests::Requester, types::Message, Bot};
 use tokio::{
     fs::{File, OpenOptions},
     io::{AsyncReadExt, AsyncWriteExt},
@@ -10,7 +10,7 @@ use crate::{
     crypt::{
         aes_key::set_aes_key, base64_convert::convert_aes_to_base64, encryption::encrypt_data,
     },
-    db::insert_to_mongo::insert_to_mongodb,
+    db::insert_to_db::insert_to_mongodb,
     tools::{generate_uuid::generate_uuid_v4, short_url::generate_short_path_url},
     types::{
         ecryption_state::FileEncryptionType,

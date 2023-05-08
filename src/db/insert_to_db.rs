@@ -2,7 +2,7 @@ use crate::tools::short_url::generate_short_path_url;
 use mongodb::{bson::doc, options::ClientOptions, Client};
 use std::env;
 
-use crate::db::find_dublicate::find_dublicate;
+use crate::db::find_info::find_dublicate;
 
 pub async fn insert_to_mongodb(
     path_download: &String,

@@ -6,7 +6,7 @@ use teloxide::{
     dispatching::{dialogue::InMemStorage, HandlerExt},
     prelude::Dispatcher,
 };
-use teloxide_core::{
+use teloxide::{
     types::{Message, Update},
     Bot,
 };

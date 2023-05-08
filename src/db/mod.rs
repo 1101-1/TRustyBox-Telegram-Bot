@@ -1,3 +1,3 @@
-pub mod find_dublicate;
-pub mod get_name_and_path_of_file;
-pub mod insert_to_mongo;
+pub mod find_info;
+pub mod get_info;
+pub mod insert_to_db;
