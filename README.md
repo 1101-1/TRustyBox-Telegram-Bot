@@ -4,7 +4,7 @@ This is a simple Telegram bot that allows you to upload and host files on a remo
 ### Features
 
  * File hosting: Upload files to a remote server and get a link to share with others.
- * Security: All files are encrypted with a user-provided key before being uploaded.
+ * Security: Files can be encrypted with a user-provided key before being uploaded.
  * Easy setup: Simply clone the repository, configure the bot token and server details, and run the bot.
 
 ### Getting Started
