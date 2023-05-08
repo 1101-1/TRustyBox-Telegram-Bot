@@ -22,7 +22,7 @@ Once the bot is running, you can interact with it using the Telegram app. Send a
 The bot can use encryption when upload files to ensure that files are secure during transmission and storage. The encryption key is provided by the user and is not stored on the server.
 ### License
 
-This project is licensed under the MIT License. See the LICENSE file for more information.
+This project is licensed under the Apache License. See the LICENSE file for more information.
 ### Acknowledgments
 
 This project was inspired by file-hosting services. Special thanks to the Telegram Bot API documentation, Teloxide and the Rust programming language community.
