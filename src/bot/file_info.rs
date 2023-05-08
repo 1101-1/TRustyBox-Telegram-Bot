@@ -1,4 +1,4 @@
-use teloxide_core::{requests::Requester, types::Message, Bot};
+use teloxide::{requests::Requester, types::Message, Bot};
 
 use crate::types::state::{HandlerResult, MyDialogue, State};
 

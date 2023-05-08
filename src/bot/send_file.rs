@@ -1,16 +1,16 @@
-use teloxide_core::{
+use teloxide::{
     requests::Requester,
     types::{InputFile, Message},
     Bot,
 };
 use tokio::{
-    fs::{File},
-    io::{AsyncReadExt},
+    fs::File,
+    io::AsyncReadExt,
 };
 
 use crate::{
     crypt::{base64_convert::convert_base64_to_aes, decryption::decrypt_data},
-    db::get_name_and_path_of_file::get_name_and_path_of_file,
+    db::get_info::get_name_and_path_of_file,
     types::state::{HandlerResult, MyDialogue, State},
 };
 
