@@ -17,9 +17,9 @@ pub enum Command {
     GetFile,
     #[command(description = "Start uploading file.")]
     UploadFile,
-    #[command(description = "Return to main menu")]
-    History,
     #[command(description = "Show history of uploaded files")]
+    History,
+    #[command(description = "Return to main menu")]
     Cancel,
 }
 
