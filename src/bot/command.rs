@@ -3,6 +3,8 @@ use teloxide::{requests::Requester, types::Message, Bot};
 
 use crate::types::state::{HandlerResult, MyDialogue, State};
 
+use super::get_history;
+
 #[derive(BotCommands, Clone)]
 #[command(
     rename_rule = "lowercase",
@@ -15,6 +17,8 @@ pub enum Command {
     GetFile,
     #[command(description = "Start uploading file.")]
     UploadFile,
+    #[command(description = "Return to main menu")]
+    History,
     #[command(description = "Return to main menu")]
     Cancel,
 }
@@ -45,7 +49,16 @@ pub async fn command_handler(
         }
         Command::Cancel => {
             dialogue.exit().await?;
-            bot.send_message(msg.chat.id, "Cancel command").await?
+            bot.send_message(msg.chat.id, "Canceled\n/help").await?
+        }
+        Command::History => {
+            get_history::send_history(bot.clone(), msg.clone(), dialogue).await?;
+            bot.send_message(
+                msg.chat.id,
+                "That's all what i found\n
+/help",
+            )
+            .await?
         }
     };
     Ok(())
