@@ -19,7 +19,7 @@ pub enum Command {
     UploadFile,
     #[command(description = "Return to main menu")]
     History,
-    #[command(description = "Return to main menu")]
+    #[command(description = "Show history of uploaded files")]
     Cancel,
 }
 
