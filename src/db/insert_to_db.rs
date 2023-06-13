@@ -3,7 +3,7 @@ use mongodb::{bson::doc, options::ClientOptions, Client};
 use std::env;
 use teloxide::types::ChatId;
 
-use crate::db::find_info::find_dublicate;
+use crate::db::checkers::find_dublicate;
 
 pub async fn insert_main_info(
     path_download: &String,

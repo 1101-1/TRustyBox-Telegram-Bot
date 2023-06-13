@@ -43,7 +43,7 @@ pub async fn command_handler(
             dialogue.update(State::HandleFile).await?;
             bot.send_message(
                 msg.chat.id,
-                "Choose and send your encryption type for upload file: Aes or None(default)",
+                "Choose and send your encryption type for upload file: Aes or None",
             )
             .await?
         }

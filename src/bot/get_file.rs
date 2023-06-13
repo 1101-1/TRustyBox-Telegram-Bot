@@ -41,7 +41,7 @@ pub async fn file_handler(
     }
     if let Some(video) = msg.video() {
         let file_id = &video.file.id;
-        let file_name = video.clone().file_name.unwrap_or(video.clone().file.id);
+        let file_name = video.clone().file_name.unwrap_or(String::from("video"));
         download_file(
             msg.clone(),
             bot.clone(),
