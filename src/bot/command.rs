@@ -3,7 +3,8 @@ use teloxide::{requests::Requester, types::Message, Bot};
 
 use crate::types::state::{HandlerResult, MyDialogue, State};
 
-use super::get_history;
+use super::file_info::get_history::send_history;
+
 
 #[derive(BotCommands, Clone)]
 #[command(
@@ -52,7 +53,7 @@ pub async fn command_handler(
             bot.send_message(msg.chat.id, "Canceled\n/help").await?
         }
         Command::History => {
-            get_history::send_history(bot.clone(), msg.clone(), dialogue).await?;
+            send_history(bot.clone(), msg.clone(), dialogue).await?;
             bot.send_message(
                 msg.chat.id,
                 "That's all what i found\n
