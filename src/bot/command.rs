@@ -3,8 +3,7 @@ use teloxide::{requests::Requester, types::Message, Bot};
 
 use crate::types::state::{HandlerResult, MyDialogue, State};
 
-use super::file_info::get_history::send_history;
-
+use super::file_info::send_history::send_history;
 
 #[derive(BotCommands, Clone)]
 #[command(

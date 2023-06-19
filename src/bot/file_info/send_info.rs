@@ -1,6 +1,9 @@
 use teloxide::{requests::Requester, types::Message, Bot};
 
-use crate::{types::state::{HandlerResult, MyDialogue, State}, bot::file_actions::send_file::send_file};
+use crate::{
+    bot::file_actions::send_file::send_file,
+    types::state::{HandlerResult, MyDialogue, State},
+};
 
 pub async fn get_file_info(bot: Bot, msg: Message, dialogue: MyDialogue) -> HandlerResult {
     if let Some(text) = msg.text() {

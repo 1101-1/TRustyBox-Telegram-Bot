@@ -1,3 +1,3 @@
 pub mod encryption_type;
-pub mod get_history;
-pub mod get_info;
+pub mod send_history;
+pub mod send_info;
