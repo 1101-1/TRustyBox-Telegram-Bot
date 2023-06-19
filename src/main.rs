@@ -12,9 +12,9 @@ use teloxide::{
 };
 
 use crate::bot::command::{command_handler, invalid_command, Command};
-use crate::bot::encryption_type::receive_encryption_type;
-use crate::bot::file_info::get_file_info;
-use crate::bot::get_file::file_handler;
+use crate::bot::file_actions::get_file::file_handler;
+use crate::bot::file_info::encryption_type::receive_encryption_type;
+use crate::bot::file_info::get_info::get_file_info;
 use crate::types::state::State;
 
 mod bot;
