@@ -29,7 +29,7 @@ pub async fn send_file(
         }
     };
     if let Some(key) = aes_key {
-        let key_bytes = match convert_base64_to_aes(key).await {
+        let key_bytes = match convert_base64_to_aes(key) {
             Ok(key) => key,
             Err(_err) => {
                 bot.send_message(msg.chat.id, "Invalid key. Try again")
@@ -41,7 +41,7 @@ pub async fn send_file(
         let mut file_data = Vec::new();
         file.read_to_end(&mut file_data).await?;
 
-        let data = decrypt_data(file_data, key_bytes).await.unwrap();
+        let data = decrypt_data(file_data, key_bytes).unwrap();
 
         bot.send_document(
             msg.chat.id,

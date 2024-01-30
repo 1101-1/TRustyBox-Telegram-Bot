@@ -5,7 +5,6 @@ use crate::types::state::{HandlerResult, MyDialogue, State};
 
 use super::file_info::get_history::send_history;
 
-
 #[derive(BotCommands, Clone)]
 #[command(
     rename_rule = "lowercase",

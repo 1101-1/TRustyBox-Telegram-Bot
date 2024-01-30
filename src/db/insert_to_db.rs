@@ -36,7 +36,7 @@ pub async fn insert_main_info(
         .await
         .unwrap()
     {
-        short_path_url = find_dublicate(generate_short_path_url().await).await;
+        short_path_url = find_dublicate(generate_short_path_url()).await;
     };
 
     let document = doc! {

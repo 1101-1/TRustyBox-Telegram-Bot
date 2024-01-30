@@ -32,10 +32,10 @@ pub async fn download_file(
         let file_name = file_name;
 
         let new_filename = match file_name.split('.').last() {
-            Some(extension) => format!("{}.{}", generate_uuid_v4().await, extension),
-            None => generate_uuid_v4().await,
+            Some(extension) => format!("{}.{}", generate_uuid_v4(), extension),
+            None => generate_uuid_v4(),
         };
-        let generated_short_path = generate_short_path_url().await;
+        let generated_short_path = generate_short_path_url();
         let file_path = format!(
             "{}{}",
             env::var("PATH_TO_FILES").expect("VAR DOESN'T SET"),
@@ -45,14 +45,14 @@ pub async fn download_file(
         let mut dst = File::create(&file_path).await?;
         bot.download_file(&telegram_file.path, &mut dst).await?;
 
-        let aes_key = set_aes_key().await;
-        let encoded_key = convert_aes_to_base64(aes_key).await;
+        let aes_key = set_aes_key();
+        let encoded_key = convert_aes_to_base64(aes_key);
 
         let mut open_file = File::open(&file_path).await?;
         let mut file_data = Vec::new();
         open_file.read_to_end(&mut file_data).await?;
 
-        let encrypted_data = match encrypt_data(&file_data, aes_key).await {
+        let encrypted_data = match encrypt_data(&file_data, aes_key) {
             Ok(encrypted_data) => encrypted_data,
             Err(_err) => {
                 bot.send_message(msg.chat.id, "Unable to crypt file. Try again")
@@ -116,10 +116,10 @@ You can download file from bot by /getfile command\n
         let telegram_file = bot.get_file(file_id.clone()).await?;
         let file_name = file_name;
         let new_filename = match file_name.split('.').last() {
-            Some(extension) => format!("{}.{}", generate_uuid_v4().await, extension),
-            None => generate_uuid_v4().await,
+            Some(extension) => format!("{}.{}", generate_uuid_v4(), extension),
+            None => generate_uuid_v4(),
         };
-        let generated_short_path = generate_short_path_url().await;
+        let generated_short_path = generate_short_path_url();
         let file_path = format!(
             "{}{}",
             env::var("PATH_TO_FILES").expect("VAR DOESN'T SET"),

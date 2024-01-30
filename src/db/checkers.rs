@@ -33,7 +33,7 @@ pub async fn find_dublicate(short_url: String) -> String {
         .await
         .unwrap()
     {
-        find_dublicate(generate_short_path_url().await).await;
+        find_dublicate(generate_short_path_url()).await;
     }
 
     short_url

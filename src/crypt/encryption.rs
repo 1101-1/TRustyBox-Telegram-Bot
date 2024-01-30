@@ -4,7 +4,7 @@ use aes::{
 };
 use aes_gcm::KeyInit;
 
-pub async fn encrypt_data(data: &[u8], aes_key: [u8; 32]) -> Result<Vec<u8>, tokio::io::Error> {
+pub fn encrypt_data(data: &[u8], aes_key: [u8; 32]) -> Result<Vec<u8>, tokio::io::Error> {
     let cipher = Aes256::new(&GenericArray::from_slice(&aes_key));
     let mut padded_data = data.to_vec();
     let pad_len = 16 - (data.len() % 16);
