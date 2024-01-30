@@ -26,3 +26,6 @@ This project is licensed under the Apache License. See the LICENSE file for more
 ### Acknowledgments
 
 This project was inspired by file-hosting services. Special thanks to the Telegram Bot API documentation, Teloxide and the Rust programming language community.
+
+### See also File-hosting site
+https://github.com/1101-1/TRustyBox
